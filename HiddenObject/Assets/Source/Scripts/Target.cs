@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Target : MonoBehaviour
 {
     [SerializeField] private Counter _counter;
-    [SerializeField] private ParticleSystem _particalStars;
+    [SerializeField] private GameObject _compareImage;
+    [SerializeField] private ParticleSystem _particleStars;
 
     private Button _button;
     private Image _image;
@@ -36,7 +37,9 @@ public class Target : MonoBehaviour
     }
 
     private void Setpartical()
-    {    
-        Instantiate(_particalStars, transform);    
+    {
+        Instantiate(_particleStars, transform);
+        ParticleSystem particle = Instantiate(_particleStars, _compareImage.transform);
+        particle.transform.localPosition = transform.localPosition;
     }
 }

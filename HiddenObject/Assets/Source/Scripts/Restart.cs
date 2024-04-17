@@ -27,7 +27,7 @@ public class Restart : MonoBehaviour
         _data = DataManager.Instance.Load();
 
         _curentLevel = _data.CurentLevel;
-        _textLevel.text = _curentLevel.ToString();
+        _textLevel.text = $"Level: {_curentLevel}";
 
         print(_curentLevel);
     }
@@ -42,7 +42,7 @@ public class Restart : MonoBehaviour
     private void IncrementNumber()
     {
         _curentLevel++;
-        _textLevel.text = _curentLevel.ToString();
+        _textLevel.text = $"Level: {_curentLevel}";
     }
 
     private void SaveData()

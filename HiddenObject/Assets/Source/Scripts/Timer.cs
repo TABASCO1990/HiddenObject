@@ -13,6 +13,21 @@ public class Timer : MonoBehaviour
 
     public bool IsCounting = true;
 
+    public int CurrentTime
+    {
+        get
+        {
+            return _currentTime;
+        }
+        set
+        {
+            if (_currentTime != 0)
+            {
+                _currentTime = value;
+            }
+        }
+    }
+
     private void Awake()
     {
         _textTime = GetComponent<TMP_Text>();
@@ -29,7 +44,7 @@ public class Timer : MonoBehaviour
         {
             if (_currentTime >= 0)
             {
-                _textTime.text = $"Time: {_currentTime}";
+                DisplayTime(_currentTime);
                 yield return new WaitForSeconds(1f);
                 _currentTime--;
             }
@@ -40,5 +55,18 @@ public class Timer : MonoBehaviour
                 IsCounting = false;
             }
         }
+    }
+
+    private void DisplayTime(float timeTotDisplay)
+    {
+        if (timeTotDisplay < 0)
+        {
+            timeTotDisplay = 0;
+        }
+
+        float minutes = Mathf.FloorToInt(timeTotDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeTotDisplay % 60);
+
+        _textTime.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
