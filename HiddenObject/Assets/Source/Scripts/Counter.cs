@@ -4,16 +4,19 @@ using UnityEngine;
 [RequireComponent(typeof(TMP_Text))]
 public class Counter : MonoBehaviour
 {
+    public static Counter Instance { get; private set; }
+
     [SerializeField] private GameObject _victoryScreen;
     [SerializeField] private GameObject _restartButton;
     [SerializeField] private Timer _timer;
 
     private TMP_Text _text;
     private int _currentValue;
-    private int _maxValue = 10;
+    private int _maxValue = 10;   
 
     private void Awake()
     {
+        Instance = this;
         _text = GetComponent<TMP_Text>();
     }
 

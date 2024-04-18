@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class Target : MonoBehaviour
 {
-    [SerializeField] private Counter _counter;
+    private Counter _counter;
     [SerializeField] private GameObject _compareImage;
     [SerializeField] private ParticleSystem _particleStars;
 
@@ -26,6 +26,11 @@ public class Target : MonoBehaviour
     private void OnDisable()
     {
         _button.onClick.RemoveListener(OnChangeState);
+    }
+
+    private void Start()
+    {
+        _counter = Counter.Instance;
     }
 
     private void OnChangeState()
