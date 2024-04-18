@@ -1,3 +1,5 @@
+using AppodealStack.Monetization.Api;
+using AppodealStack.Monetization.Common;
 using TMPro;
 using UnityEngine;
 
@@ -30,6 +32,15 @@ public class Counter : MonoBehaviour
             _victoryScreen.SetActive(true);
             _restartButton.SetActive(true);
             _timer.IsCounting = false;
+            ShowInterstitial();
+        }
+    }
+
+    private void ShowInterstitial()
+    {
+        if (Appodeal.IsLoaded(AppodealAdType.Interstitial))
+        {
+            Appodeal.Show(AppodealAdType.Interstitial);
         }
     }
 }
