@@ -29,6 +29,9 @@ dependencies {
     }
     
 **DEPS**}
+configurations {
+    all*.exclude group: 'com.google.android.gms', module: 'play-services-ads'
+}
 // Android Resolver Exclusions Start
 android {
   packagingOptions {

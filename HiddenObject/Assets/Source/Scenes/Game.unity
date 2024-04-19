@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: com.serbull.iaptutorial.AddTime
+  productId: AddTime
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -281,7 +281,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 242628698}
-        m_TargetAssemblyTypeName: TimeIncrease, Assembly-CSharp
+        m_TargetAssemblyTypeName: Game.TimeIncrease, Assembly-CSharp
         m_MethodName: OnPurchaseCompleted
         m_Mode: 0
         m_Arguments:
@@ -296,7 +296,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 242628698}
-        m_TargetAssemblyTypeName: TimeIncrease, Assembly-CSharp
+        m_TargetAssemblyTypeName: Game.TimeIncrease, Assembly-CSharp
         m_MethodName: StartTime
         m_Mode: 1
         m_Arguments:
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.22745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.21176471}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
